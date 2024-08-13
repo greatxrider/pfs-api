@@ -5,7 +5,11 @@ const cors = require('cors');
 const app = express();  // Initialize Express app
 
 // Use CORS middleware
-app.use(cors());
+app.use(cors({
+    origin: '*',  // Allow all origins
+    methods: ['GET'],  // Allow specific HTTP methods
+    allowedHeaders: ['Content-Type']  // Allow specific headers
+}));
 
 const PORT = 8000;
 
